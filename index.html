@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wtf</title>
+    <style>
+
+       body{
+            margin: 0;
+        } 
+        nav{
+            display: flex;
+            background-color: antiquewhite;
+        }
+
+        nav ul{
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li{
+            margin-right: 20px;
+           
+        }
+
+        nav ul li a{
+           text-decoration: none;
+        }
+nav ul li a.active {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+         <li><a href="">a</a></li>
+         <li><a href="">a</a></li>
+         <li><a href="">a</a></li>
+        </ul>
+    </nav>
+ 
+    <script>
+// Get all nav links
+const navLinks = document.querySelectorAll("nav ul li a");
+
+// Add event listener to each nav link
+navLinks.forEach(link => {
+  link.addEventListener("click", function(event) {
+    // Prevent default link behavior
+    event.preventDefault();
+    
+    // Remove "active" class from all nav links
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+    });
+    
+    // Add "active" class to clicked nav link
+    this.classList.add("active");
+  });
+});
+
+
+// const navLink = document.querySelectorAll('.nav__link');
+
+// function linkAction(){
+//     //Active link
+//     navLink.forEach(n => n.classList.remove('active'))
+//     this.classList.add('active')
+
+//     //remove menu mobile
+//     const navMenu = document.getElementById('nav-menu')
+//     navMenu.classList.remove('show')
+// }
+    </script>
+</body>
+</html>
